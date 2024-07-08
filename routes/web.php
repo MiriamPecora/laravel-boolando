@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/products', function () {
+    $products = include resource_path('data/products.php');
+    return view('products.index', compact('products'));
 });
