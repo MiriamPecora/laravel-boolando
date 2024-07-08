@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/products', function () {
+Route::get('/', function () {
     $products = include resource_path('data/products.php');
-    return view('products.index', compact('products'));
-});
+    return view('home', ['products' => $products]);
+})->name('home');
